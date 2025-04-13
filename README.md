@@ -17,8 +17,8 @@ A modern, feature-rich blogging platform built with React, TypeScript, and Tailw
 ## 🖼️ Screenshots
 
 <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-    <img src="public/screenshots/dark-mode.png" width="400" alt="Dark Mode" />
-    <img src="public/screenshots/light-mode.png" width="400" alt="Light Mode" />
+    <img src="public/screenshots/dark.png" width="400" alt="Dark Mode" />
+    <img src="public/screenshots/light.png" width="400" alt="Light Mode" />
 </div>
 
 <!-- Add these screenshots to your public/screenshots directory -->
