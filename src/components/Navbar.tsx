@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -138,20 +137,11 @@ const Navbar: React.FC = () => {
         <div className="container mx-auto px-4 py-3 md:py-4">
           <div className="flex justify-between items-center">
             <Link to="/" className="flex items-center space-x-2 group">
-              <motion.div
-                className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary flex items-center justify-center hover-glow"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <span className="text-white font-bold font-poppins text-sm md:text-base">C</span>
-              </motion.div>
-              <motion.span
-                className="text-lg md:text-2xl font-bold font-poppins text-foreground"
-                whileHover={{ color: '#DC143C' }}
-                transition={{ duration: 0.2 }}
-              >
-                Crimson<span className="text-primary">Blog</span>
-              </motion.span>
+              <img 
+                src="/logo2.png" 
+                alt="Website logo" 
+                className='h-12 w-12 md:h-16 md:w-16 object-contain transition-transform hover:scale-105'
+              />
             </Link>
 
             {/* Desktop Menu */}
