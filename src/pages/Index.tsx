@@ -29,6 +29,7 @@ const Index = () => {
 
   // Track if we've shown the localStorage toast
   const [hasShownStorageToast, setHasShownStorageToast] = useLocalStorage('has-shown-storage-toast', false);
+  const [hasShownShortcutToast, setHasShownShortcutToast] = useLocalStorage('shortcut-toast-shown', false);
   
   // Filter posts when activeFilter changes
   useEffect(() => {
@@ -58,7 +59,26 @@ const Index = () => {
         setHasShownStorageToast(true);
       }, 1500);
     }
-  }, [hasShownStorageToast, setHasShownStorageToast]);
+
+    // Show keyboard shortcut toast if not shown before
+    if (!hasShownShortcutToast) {
+      setTimeout(() => {
+        toast.message(
+          "Press Ctrl+K (or ⌘+K) to open command menu for quick navigation",
+          {
+            duration: 8000,
+            position: 'bottom-center',
+            icon: '⌨️',
+            action: {
+              label: 'Try it',
+              onClick: () => setCommandMenuOpen(true)
+            }
+          }
+        );
+        setHasShownShortcutToast(true);
+      }, 3000);
+    }
+  }, [hasShownStorageToast, setHasShownStorageToast, hasShownShortcutToast, setHasShownShortcutToast]);
 
   return (
     <div className="min-h-screen flex flex-col">
