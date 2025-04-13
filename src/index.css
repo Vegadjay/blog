@@ -1,0 +1,254 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/typescript-tea/typescript-tea.github.io@master/fonts/SFMono-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  src: url('https://cdn.jsdelivr.net/gh/typescript-tea/typescript-tea.github.io@master/fonts/SFMono-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    
+    --primary: 354 70% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 30 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 0 73% 77%;
+    --accent-foreground: 0 0% 0%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 354 70% 50%;
+    
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
+    
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 354 70% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 30 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 0 73% 77%;
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 354 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-bold;
+  }
+  
+  p, span, div, button, a, input, textarea {
+    @apply font-poppins;
+  }
+  
+  code, pre {
+    font-family: 'SF Mono', monospace;
+  }
+}
+
+@layer components {
+  .blog-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:-translate-y-1;
+  }
+  
+  .nav-link {
+    @apply relative text-foreground hover:text-primary transition-colors duration-200 font-poppins;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+  
+  .pulse-effect {
+    animation: pulse 2s infinite;
+  }
+  
+  .button-hover {
+    @apply transition-all duration-300 hover:shadow-md transform hover:-translate-y-1;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 15px rgba(220, 20, 60, 0.5);
+  }
+
+  .category-scroll {
+    @apply flex gap-2 overflow-x-auto pb-4 scrollbar-none snap-x snap-mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding: 1rem;
+  }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-item {
+    @apply px-4 py-2 whitespace-nowrap font-medium text-base;
+  }
+  
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0,
+      rgba(255, 255, 255, 0.2) 20%,
+      rgba(255, 255, 255, 0.5) 60%,
+      rgba(255, 255, 255, 0)
+    );
+    animation: shimmer 2s infinite;
+  }
+  
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .bounce-animation {
+    animation: bounce 2s ease-in-out infinite;
+  }
+  
+  .spin-animation {
+    animation: spin 8s linear infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
