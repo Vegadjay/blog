@@ -139,7 +139,7 @@ const Footer: React.FC = () => {
             <p className="mt-2 flex items-center justify-center font-poppins">
               Made with <Heart size={14} className="mx-1 text-primary" /> by 
               <a 
-                href="https://github.com/vegadjay" 
+                href="https://x.com/JAY_VEGAD_" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="ml-1 text-primary hover:underline"
