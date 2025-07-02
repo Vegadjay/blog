@@ -183,7 +183,7 @@ const ProfilePage = () => {
             >
               <Avatar className="h-32 w-32 border-4 border-background shadow-lg">
                 <img 
-                  src="/profile/main.jpeg" 
+                  src="https://jayvegad.xyz/main/main-logo.jpeg" 
                   alt="Profile" 
                   className="w-full h-full object-cover"
                 />
@@ -200,17 +200,17 @@ const ProfilePage = () => {
           >
             <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-6">
               <div>
-                <h1 className="text-3xl font-bold font-poppins mb-2">Prince Dudhatra</h1>
+                <h1 className="text-3xl font-bold font-poppins mb-2">Jay Vegad</h1>
                 <p className="text-muted-foreground font-poppins mb-4">Web Developer & Designer</p>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-3 mb-6">
               <Badge variant="outline" className="flex items-center">
-                <User className="h-3 w-3 mr-1" /> @PrinceDudhatra
+                <User className="h-3 w-3 mr-1" /> @jayvegad
               </Badge>
               <Badge variant="outline" className="flex items-center">
-                <Mail className="h-3 w-3 mr-1" /> hello@prince.com
+                <Mail className="h-3 w-3 mr-1" /> hello@jayvegad.com
               </Badge>
               <Badge variant="outline" className="flex items-center">
                 <MapPin className="h-3 w-3 mr-1" /> India
